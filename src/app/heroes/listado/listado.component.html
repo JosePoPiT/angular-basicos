@@ -1,0 +1,26 @@
+<p>Basketball Players</p>
+
+
+<div *ngIf="playerBorrado; else noBorrado">
+    <h3>Player Borrado: <small>{{ playerBorrado }}</small> </h3>
+    
+
+
+</div>
+
+<ng-template #noBorrado>
+
+<h3>No ha borrado nada </h3>
+
+</ng-template>
+
+<button (click)="borrarPlayer()">
+    Borrar
+</button>
+
+<ul>
+    <li *ngFor="let BasketballPlayer of basketballPlayers; let i = index">
+        {{ i + 1 }} - {{ BasketballPlayer }}
+    </li>
+</ul>
+
